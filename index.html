@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muscle Lab Fitness Club — Community-driven strength training in Lowell, MA. Veteran-owned. All levels welcome." />
+  <title>Muscle Lab Fitness Club | Strength Training in Lowell, MA</title>
+
+  <!-- Fonts: Barlow Condensed (headlines) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">MUSCLE <span>LAB</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#personal-training">Personal Training</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+
+      <a href="#cta" class="btn btn-primary nav-cta">Join a Class</a>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="navMobile">
+      <ul>
+        <li><a href="#about" class="nav-mobile-link">About</a></li>
+        <li><a href="#classes" class="nav-mobile-link">Classes</a></li>
+        <li><a href="#personal-training" class="nav-mobile-link">Personal Training</a></li>
+        <li><a href="#community" class="nav-mobile-link">Community</a></li>
+        <li><a href="#cta" class="btn btn-primary nav-mobile-link">Join a Class</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <!-- Background image — drop your gym photo into images/hero-bg.jpg -->
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-in-up delay-1">Lowell, MA &mdash; Veteran-Owned</p>
+      <h1 class="hero-headline fade-in-up delay-2">
+        Get Stronger.<br />
+        Move Better.<br />
+        <span class="text-green">Show Up Consistently.</span>
+      </h1>
+      <p class="hero-sub fade-in-up delay-3">Community-driven training for all levels. No judgment. Just results.</p>
+      <div class="hero-actions fade-in-up delay-4">
+        <a href="#cta" class="btn btn-primary">Join a Class</a>
+        <a href="#personal-training" class="btn btn-ghost">Start Training</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS TICKER ========== -->
+  <section class="reviews-ticker">
+    <div class="ticker-track">
+      <!-- Reviews duplicated for seamless infinite loop -->
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Best gym in Lowell. The community here is unlike anything I've experienced."</p>
+        <span class="reviewer">— Maria S.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Veteran-owned and it shows — the discipline and structure is exactly what I needed."</p>
+        <span class="reviewer">— James T.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I've tried 5 gyms. Muscle Lab is the only one that actually felt like home."</p>
+        <span class="reviewer">— Priya K.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Down 20 lbs in 4 months. The coaches actually care about your progress."</p>
+        <span class="reviewer">— Carlos M.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The glute classes are no joke. I've seen more results here than anywhere else."</p>
+        <span class="reviewer">— Jasmine L.</span>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Best gym in Lowell. The community here is unlike anything I've experienced."</p>
+        <span class="reviewer">— Maria S.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Veteran-owned and it shows — the discipline and structure is exactly what I needed."</p>
+        <span class="reviewer">— James T.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I've tried 5 gyms. Muscle Lab is the only one that actually felt like home."</p>
+        <span class="reviewer">— Priya K.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Down 20 lbs in 4 months. The coaches actually care about your progress."</p>
+        <span class="reviewer">— Carlos M.</span>
+      </div>
+      <div class="ticker-item">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The glute classes are no joke. I've seen more results here than anywhere else."</p>
+        <span class="reviewer">— Jasmine L.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT / MISSION ========== -->
+  <section class="about reveal" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p class="section-label">Our Mission</p>
+          <h2 class="section-headline">Built for Real People.<br /><span class="text-green">Real Results.</span></h2>
+          <p class="body-text">
+            Muscle Lab Fitness Club is a community-driven gym in Lowell, MA — built for everyday people
+            who want to get stronger, more confident, and more capable.
+          </p>
+          <p class="body-text">
+            We're family-owned and led by an Army veteran. That means discipline, structure, and genuine
+            accountability — not gimmicks. We serve a diverse membership, including strong Brazilian and
+            Cambodian communities, and we're proud of that.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-number">200<span class="text-green">+</span></span>
+              <span class="stat-label">Members</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">3<span class="text-green">+</span></span>
+              <span class="stat-label">Years Strong</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">100<span class="text-green">%</span></span>
+              <span class="stat-label">Veteran-Owned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Replace this placeholder div with an <img> when you have a photo -->
+        <div class="about-image">
+          <div class="image-placeholder">
+            <span>Gym Photo</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLASSES ========== -->
+  <section class="classes reveal" id="classes">
+    <div class="container">
+      <p class="section-label text-center">What We Offer</p>
+      <h2 class="section-headline text-center">Training That <span class="text-green">Actually Works</span></h2>
+      <p class="section-sub text-center">Built for all levels — from your first day to your best day.</p>
+
+      <div class="classes-grid">
+
+        <!-- Strength Training -->
+        <div class="class-card">
+          <div class="class-icon">
+            <!-- Dumbbell icon (SVG inline) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5v14M18 5v14M6 8h12M6 16h12M2 8h4M18 8h4M2 16h4M18 16h4"/></svg>
+          </div>
+          <h3 class="class-title">Strength Training</h3>
+          <p class="class-desc">Full-body training designed to make you stronger every session. Progressive, structured, and built around real movement patterns.</p>
+          <ul class="class-bullets">
+            <li>Proper form and technique coaching</li>
+            <li>Progressive overload and programming</li>
+            <li>Functional movements for real life</li>
+            <li>Weights + bodyweight work</li>
+          </ul>
+          <a href="#cta" class="btn btn-outline">Join a Class</a>
+        </div>
+
+        <!-- Glute Sculpting -->
+        <div class="class-card class-card--featured">
+          <div class="class-badge">Popular</div>
+          <div class="class-icon">
+            <!-- Fire icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 6-6 8-6 14a6 6 0 0 0 12 0c0-6-6-8-6-14z"/><path d="M12 12c0 3-2 4-2 7a2 2 0 0 0 4 0c0-3-2-4-2-7z"/></svg>
+          </div>
+          <h3 class="class-title">Glute Sculpting</h3>
+          <p class="class-desc">Lower-body focused training to build strength and shape. This isn't random circuits — it's intentional, progressive work.</p>
+          <ul class="class-bullets">
+            <li>Targeted glute and hamstring development</li>
+            <li>Progressive resistance training</li>
+            <li>Structured, intentional workouts</li>
+            <li>Performance and aesthetics combined</li>
+          </ul>
+          <a href="#cta" class="btn btn-primary">Join a Class</a>
+        </div>
+
+        <!-- Personal Training -->
+        <div class="class-card" id="personal-training">
+          <div class="class-icon class-icon--purple">
+            <!-- User icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <h3 class="class-title">Personal Training</h3>
+          <p class="class-desc">1-on-1 coaching built entirely around your goals. Maximum accountability, maximum results.</p>
+          <ul class="class-bullets">
+            <li>Fully customized training plans</li>
+            <li>Accountability and structure</li>
+            <li>Technique coaching and tracking</li>
+            <li>Flexible scheduling</li>
+          </ul>
+          <a href="#cta" class="btn btn-outline">Start Training</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY MUSCLE LAB ========== -->
+  <section class="why reveal">
+    <div class="container">
+      <p class="section-label text-center">Why Us</p>
+      <h2 class="section-headline text-center">More Than a Gym.<br /><span class="text-green">A Culture.</span></h2>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">
+            <!-- Shield / veteran icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Veteran-Owned</h3>
+          <p>Led by an Army vet. Discipline, accountability, and structure aren't buzzwords here — they're the standard.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <!-- Heart / family icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Family-Run</h3>
+          <p>You're not a membership number. You're part of the family. We know your name, your goals, and your progress.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <!-- Globe / community icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Diverse Community</h3>
+          <p>Everyone belongs here. Our members come from all walks of life — including strong Brazilian and Cambodian communities.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <!-- Target / results icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Results-Focused</h3>
+          <p>We don't sell vibes. We build programs that progressively get you stronger, week after week. Science + hard work.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY / GALLERY ========== -->
+  <section class="community reveal" id="community">
+    <div class="container">
+      <p class="section-label text-center">Our People</p>
+      <h2 class="section-headline text-center">You're Not Just Joining a Gym.<br /><span class="text-green">You're Joining a Culture.</span></h2>
+    </div>
+
+    <!-- Full-width photo grid — replace placeholders with real <img> tags -->
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall">
+        <div class="image-placeholder"><span>Community Photo</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="image-placeholder"><span>Training Photo</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="image-placeholder"><span>Class Photo</span></div>
+      </div>
+      <div class="gallery-item gallery-item--wide">
+        <div class="image-placeholder"><span>Gym Photo</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="community-quote">"Showing up is the hardest part. We make it worth it."</p>
+    </div>
+  </section>
+
+  <!-- ========== CALL TO ACTION ========== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <h2 class="cta-headline">Ready to Start?</h2>
+      <p class="cta-sub">No contracts. No judgment. Just show up and do the work.</p>
+      <div class="cta-actions">
+        <a href="mailto:info@musclelabfitness.com" class="btn btn-dark">Join a Class</a>
+        <a href="tel:+19781234567" class="btn btn-dark-outline">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">MUSCLE <span>LAB</span></a>
+          <p>Veteran-owned. Community-driven.<br />Lowell, MA.</p>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#personal-training">Personal Training</a></li>
+            <li><a href="#community">Community</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Find Us</h4>
+          <!-- Update with real address and phone -->
+          <p>123 Main Street<br />Lowell, MA 01850</p>
+          <p><a href="tel:+19781234567">(978) 123-4567</a></p>
+          <p><a href="mailto:info@musclelabfitness.com">info@musclelabfitness.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Muscle Lab Fitness Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
