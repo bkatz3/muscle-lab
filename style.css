@@ -279,6 +279,11 @@ ul {
 .nav-logo span {
   color: var(--accent-green);
 }
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
 
 /* Desktop links */
 .nav-links {
@@ -370,7 +375,7 @@ ul {
   display: flex;
   align-items: center;
   /* Background image — will show through overlay */
-  background-image: url('images/hero-bg.jpg');
+  background-image: url('images/IMG_0091.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -388,10 +393,6 @@ ul {
   );
 }
 
-/* When no image is set, fallback gradient */
-.hero:not([style]) .hero-overlay {
-  background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
-}
 
 .hero-content {
   position: relative;
@@ -545,6 +546,14 @@ ul {
 
 .about-image .image-placeholder {
   min-height: 500px;
+  border-radius: var(--radius-lg);
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius-lg);
 }
 
@@ -916,6 +925,19 @@ ul {
   .nav-toggle {
     display: flex;
   }
+  .nav-logo-img {
+    height: 32px; /* slightly smaller on mobile */
+  }
+
+  /* Reduce section padding on mobile */
+  .about,
+  .classes,
+  .why {
+    padding: 5rem 0;
+  }
+  .community {
+    padding: 5rem 0 2rem;
+  }
 
   /* Hero */
   .hero-headline {
@@ -930,6 +952,9 @@ ul {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  .about-image img {
+    height: 300px; /* override the 500px fixed height */
   }
   .about-image .image-placeholder {
     min-height: 300px;
@@ -952,10 +977,11 @@ ul {
     margin: 3rem auto 0;
   }
 
-  /* Gallery */
+  /* Gallery — 2 columns, explicit row height so images don't collapse */
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: none;
+    grid-auto-rows: 220px;
   }
   .gallery-item--tall {
     grid-row: span 1;
@@ -982,16 +1008,28 @@ ul {
     padding: 0 1.2rem;
   }
 
+  /* Further reduce section padding on small phones */
+  .about,
+  .classes,
+  .why {
+    padding: 4rem 0;
+  }
+
   .hero-actions {
     flex-direction: column;
   }
   .hero-actions .btn {
     text-align: center;
+    width: 100%; /* full-width buttons on small screens */
   }
 
   .cta-actions {
     flex-direction: column;
     align-items: center;
+  }
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
 
   .stats-row {
@@ -999,11 +1037,15 @@ ul {
     gap: 1rem;
   }
 
+  /* Gallery: single column on small phones */
   .gallery-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
   }
-  .gallery-item--wide {
+  .gallery-item--wide,
+  .gallery-item--tall {
     grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
