@@ -40,6 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Close mobile menu when tapping outside the nav
+  document.addEventListener('click', (e) => {
+    if (navMobile.classList.contains('open') && !nav.contains(e.target)) {
+      navMobile.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    }
+  });
+
 
   // ===== SCROLL REVEAL =====
   // Elements with class .reveal animate in when they enter the viewport
