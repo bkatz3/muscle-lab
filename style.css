@@ -371,7 +371,8 @@ ul {
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh;          /* fallback for older browsers */
+  min-height: 100svh;         /* fix iOS Safari address-bar shifting viewport */
   display: flex;
   align-items: center;
   /* Background image — will show through overlay */
@@ -955,6 +956,11 @@ ul {
   .footer-brand {
     grid-column: span 2;
   }
+
+  /* Parallax is janky on tablets too — disable early */
+  .hero {
+    background-attachment: scroll;
+  }
 }
 
 /* ============================================================
@@ -989,8 +995,8 @@ ul {
     font-size: clamp(2.8rem, 12vw, 5rem);
   }
   .hero {
-    background-attachment: scroll; /* parallax doesn't work well on mobile */
     min-height: 90vh;
+    min-height: 90svh;
   }
 
   /* About */
@@ -1052,6 +1058,41 @@ ul {
   .footer-brand {
     grid-column: span 1;
   }
+
+  /* CTA section — reduce vertical padding on mobile */
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  /* Touch targets — nav links need 44px min height per Apple/Google guidelines */
+  .nav-mobile-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Community quote — tighten bottom spacing */
+  .community-quote {
+    padding: 1.5rem 0 2rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — 600px (small tablets / large phones)
+   Classes and Why cards use 2 columns here — better than
+   single-col-with-max-width on mid-size screens.
+   ============================================================ */
+@media (min-width: 480px) and (max-width: 768px) {
+  .classes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+    margin: 3rem 0 0;
+  }
 }
 
 /* ============================================================
@@ -1100,6 +1141,16 @@ ul {
   .gallery-item--tall {
     grid-column: span 1;
     grid-row: span 1;
+  }
+
+  /* Ticker cards — shrink from 320px so they don't crowd small screens */
+  .ticker-item {
+    width: 270px;
+  }
+
+  /* CTA section — tighten further on small phones */
+  .cta-section {
+    padding: 3rem 0;
   }
 }
 
