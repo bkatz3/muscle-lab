@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get started at Muscle Lab Fitness Club. Sign up today." />
+  <title>Get Started | Muscle Lab Fitness Club</title>
+
+  <!-- Fonts: Barlow Condensed (headlines) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Signup page layout ── */
+    .signup-section {
+      min-height: calc(100vh - 80px); /* fill below nav */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    .signup-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 56px 48px;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .signup-card .section-label {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .signup-card h1 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .signup-card p.signup-sub {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 36px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Form fields */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-green);
+    }
+
+    /* Style the select dropdown arrow */
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    /* Fix browser default option colors */
+    .form-group select option {
+      background: #1c1c1c;
+      color: var(--text-primary);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Placeholder color */
+    ::placeholder {
+      color: var(--text-muted);
+    }
+
+    .signup-submit {
+      width: 100%;
+      margin-top: 8px;
+      font-size: 1rem;
+      padding: 16px;
+    }
+
+    /* Success state (shown after submit) */
+    .signup-success {
+      display: none;
+      text-align: center;
+      padding: 24px 0 8px;
+    }
+
+    .signup-success .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent-green-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .signup-success .success-icon svg {
+      color: var(--accent-green);
+      width: 28px;
+      height: 28px;
+    }
+
+    .signup-success h2 {
+      font-family: var(--font-headline);
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .signup-success p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .signup-card {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <!-- Logo links back to homepage -->
+      <a href="index.html" class="nav-logo"><img src="images/Logo.png" alt="Muscle Lab Fitness Club" class="nav-logo-img" /></a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#classes">Classes</a></li>
+        <li><a href="index.html#personal-training">Personal Training</a></li>
+        <li><a href="index.html#facility">Our Facility</a></li>
+      </ul>
+
+      <a href="tel:+19782019660" class="btn btn-primary nav-cta">Call Us</a>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="navMobile">
+      <ul>
+        <li><a href="index.html#about" class="nav-mobile-link">About</a></li>
+        <li><a href="index.html#classes" class="nav-mobile-link">Classes</a></li>
+        <li><a href="index.html#personal-training" class="nav-mobile-link">Personal Training</a></li>
+        <li><a href="index.html#facility" class="nav-mobile-link">Our Facility</a></li>
+        <li><a href="tel:+19782019660" class="btn btn-primary nav-mobile-link">Call Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== SIGNUP FORM ========== -->
+  <section class="signup-section">
+    <div class="signup-card">
+
+      <p class="section-label">Get Started</p>
+      <h1>Let's <span class="text-green">Get to Work.</span></h1>
+      <p class="signup-sub">Fill out the form below and we'll be in touch.</p>
+
+      <!-- Form -->
+      <form id="signupForm" novalidate>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+        </div>
+
+        <div class="form-group">
+          <label for="classType">What are you interested in?</label>
+          <select id="classType" name="classType" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="strength-training">Strength Training</option>
+            <option value="glute-sculpting">Glute Sculpting</option>
+            <option value="one-on-one">1-on-1 Personal Training</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Any questions, goals, or anything else you want us to know..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary signup-submit">Submit — Let's Go</button>
+
+      </form>
+
+      <!-- Shown after successful submit -->
+      <div class="signup-success" id="signupSuccess">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2>You're <span class="text-green">In.</span></h2>
+        <p>We got your info and we'll reach out soon. Talk soon.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Mobile nav toggle (same logic as main page)
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.nav-mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.classList.remove('open');
+        navToggle.classList.remove('open');
+      });
+    });
+
+    // Form submit — validate required fields, then show success message
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const required = ['name', 'email', 'phone', 'classType'];
+      let valid = true;
+
+      required.forEach(id => {
+        const field = document.getElementById(id);
+        if (!field.value.trim()) {
+          field.style.borderColor = '#ff4d4d'; // highlight empty fields red
+          valid = false;
+        } else {
+          field.style.borderColor = ''; // reset if filled
+        }
+      });
+
+      if (!valid) return; // stop here if anything is missing
+
+      this.style.display = 'none';
+      document.getElementById('signupSuccess').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
