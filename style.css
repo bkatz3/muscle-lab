@@ -365,6 +365,12 @@ ul {
 .nav-mobile-link:hover {
   color: var(--accent-green);
 }
+/* CTA button inside mobile menu — keep button colors, center it */
+.nav-mobile .btn {
+  color: #0a0a0a;
+  text-align: center;
+  width: 100%;
+}
 
 /* ============================================================
    HERO
@@ -426,7 +432,8 @@ ul {
 
 .hero-sub {
   font-size: 1.15rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.88); /* brighter than --text-secondary (#a0a0a0) for hero readability */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6); /* keeps it legible over any photo area */
   max-width: 480px;
   margin-bottom: 2.5rem;
 }
