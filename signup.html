@@ -219,6 +219,11 @@
       <!-- Form -->
       <form id="signupForm" novalidate>
 
+        <!-- Web3Forms required fields -->
+        <input type="hidden" name="access_key" value="9566716a-b196-4d9c-8f5f-5853fa6e041f" />
+        <input type="hidden" name="subject" value="New Signup — Muscle Lab Fitness Club" />
+        <input type="hidden" name="from_name" value="Muscle Lab Website" />
+
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your full name" required />
@@ -281,10 +286,11 @@
       });
     });
 
-    // Form submit — validate required fields, then show success message
-    document.getElementById('signupForm').addEventListener('submit', function(e) {
+    // Form submit — validate required fields, then POST to Web3Forms
+    document.getElementById('signupForm').addEventListener('submit', async function(e) {
       e.preventDefault();
 
+      // Validate required fields
       const required = ['name', 'email', 'phone', 'classType'];
       let valid = true;
 
@@ -298,10 +304,47 @@
         }
       });
 
-      if (!valid) return; // stop here if anything is missing
+      if (!valid) return;
 
-      this.style.display = 'none';
-      document.getElementById('signupSuccess').style.display = 'block';
+      // Disable button while submitting
+      const btn = this.querySelector('.signup-submit');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(this)))
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          // Hide form, show success message
+          this.style.display = 'none';
+          document.getElementById('signupSuccess').style.display = 'block';
+        } else {
+          // Show error inline
+          btn.disabled = false;
+          btn.textContent = 'Submit — Let\'s Go';
+          btn.style.background = '#ff4d4d';
+          btn.textContent = 'Something went wrong — try again';
+          setTimeout(() => {
+            btn.style.background = '';
+            btn.textContent = 'Submit — Let\'s Go';
+          }, 3000);
+        }
+      } catch (err) {
+        // Network error fallback
+        btn.disabled = false;
+        btn.style.background = '#ff4d4d';
+        btn.textContent = 'Network error — try again';
+        setTimeout(() => {
+          btn.style.background = '';
+          btn.textContent = 'Submit — Let\'s Go';
+        }, 3000);
+      }
     });
   </script>
 
