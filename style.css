@@ -803,27 +803,32 @@ ul {
   padding: 8rem 0 4rem;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 280px 280px;
-  gap: 0.5rem;
+/* Auto-scrolling carousel */
+.gallery-carousel {
+  overflow: hidden; /* clip the track as it scrolls */
   margin: 3rem 0;
 }
 
-/* Tall left photo spans 2 rows */
-.gallery-item--tall {
-  grid-row: span 2;
+.gallery-track {
+  display: flex;
+  gap: 0.5rem;
+  width: max-content;
+  /* scroll the full width of one set (12 items × (280px + 0.5rem gap)) */
+  animation: gallery-scroll 40s linear infinite;
 }
 
-/* Wide bottom photo spans 2 columns */
-.gallery-item--wide {
-  grid-column: span 2;
+
+@keyframes gallery-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* -50% = exactly one set, loops perfectly */
 }
 
 .gallery-item {
   overflow: hidden;
   border-radius: var(--radius);
+  height: 340px;
+  width: 280px;
+  flex-shrink: 0;
 }
 
 .gallery-item .image-placeholder {
@@ -1060,17 +1065,10 @@ ul {
     margin: 3rem auto 0;
   }
 
-  /* Gallery — 2 columns, explicit row height so images don't collapse */
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: none;
-    grid-auto-rows: 220px;
-  }
-  .gallery-item--tall {
-    grid-row: span 1;
-  }
-  .gallery-item--wide {
-    grid-column: span 2;
+  /* Gallery — smaller cards on tablet */
+  .gallery-item {
+    height: 260px;
+    width: 210px;
   }
 
   /* Footer */
@@ -1156,14 +1154,10 @@ ul {
   }
 
   /* Gallery: single column on small phones */
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 240px;
-  }
-  .gallery-item--wide,
-  .gallery-item--tall {
-    grid-column: span 1;
-    grid-row: span 1;
+  /* Gallery — smaller cards on mobile */
+  .gallery-item {
+    height: 220px;
+    width: 180px;
   }
 
   /* Ticker cards — shrink from 320px so they don't crowd small screens */
