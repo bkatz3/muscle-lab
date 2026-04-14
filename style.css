@@ -275,6 +275,8 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 .nav-logo span {
   color: var(--accent-green);
@@ -283,6 +285,15 @@ ul {
   height: 56px;
   width: auto;
   display: block;
+}
+.nav-logo-name {
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  white-space: nowrap;
+  margin-left: 0.6rem;
 }
 
 /* Desktop links */
@@ -984,6 +995,11 @@ ul {
   }
   .nav-logo-img {
     height: 32px; /* slightly smaller on mobile */
+  }
+  .nav-logo-name {
+    font-size: 0.65rem; /* shrink text to fit mobile nav */
+    letter-spacing: 0.04em;
+    margin-left: 0.4rem;
   }
 
   /* Reduce section padding on mobile */
