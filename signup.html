@@ -271,6 +271,15 @@
   </section>
 
   <script>
+    // Pre-populate class type from URL param (e.g. ?class=strength-training)
+    const params = new URLSearchParams(window.location.search);
+    const classParam = params.get('class');
+    if (classParam) {
+      const select = document.getElementById('classType');
+      const match = select.querySelector(`option[value="${classParam}"]`);
+      if (match) match.selected = true;
+    }
+
     // Mobile nav toggle (same logic as main page)
     const navToggle = document.getElementById('navToggle');
     const navMobile = document.getElementById('navMobile');
